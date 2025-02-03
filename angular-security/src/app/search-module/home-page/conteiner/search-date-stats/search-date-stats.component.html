@@ -1,0 +1,6 @@
+<app-stats-date-presenter [stats]="stats" [tasks]="tasksColor" 
+[selectedItems]="selectedItems" [exportSearch]="exportSearch" 
+class="h-full" [formStats]="formStats" [formDate]="formDate"
+(searchEmit) = "search()" (prevPagEmit)="prevPag()" 
+(nextPagEmit)="nextPag()" #stats_date (taskTitleEvent)="goToEdit($event)">
+

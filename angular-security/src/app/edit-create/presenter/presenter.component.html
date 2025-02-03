@@ -1,0 +1,57 @@
+<div class="flex flex-col items-center h-200">
+    <div class="w-30-100 h-full bg-white rounded-xl" [formGroup]="formGroup">
+        <h2 class="text-3xl text-center mt-8 mb-8">New Task</h2>
+        <div class="px-16">
+            <div>
+                <app-input-text [form]="title" id="titleInput" placeholder="Task Title" type="text"
+                class="w-full" #titleInput></app-input-text>
+                <span *ngIf="title?.hasError('required') && title?.touched"
+                class="text-red-600  text-base">Title is required</span>
+
+                <span *ngIf="title?.hasError('minlength') && title?.touched
+                && title?.value"
+                class="text-red-600  text-base">Title must have at least 3 characters</span>
+
+                <span *ngIf="title?.hasError('maxlength') && title?.touched
+                && title?.value"
+                class="text-red-600  text-base">Title can have until 20 characters</span>
+            </div>
+            <div class="mt-12">
+                <app-input-description [form]="description" id="description" placeholder="Description" type="text" 
+                class="w-full"></app-input-description>
+            </div>
+            <div class="flex flex-row mt-12">
+                <div class="me-auto flex gap-3">
+                    <app-input-check [form]="important"></app-input-check>
+                    <p>Important </p>
+                </div>
+                <div class="flex gap-3">
+                    <app-input-check [form]="urgent"></app-input-check>
+                    <p>Urgent </p>
+                </div>
+            </div>
+            <div  class="flex mt-12"> 
+                <div class="w-5/12 me-auto">
+                    <p class="mb-2">Stats</p>
+                    <app-label class="w-full" [options]="options" #label [form]="stats"></app-label>
+                    <span *ngIf="stats?.hasError('required') && stats?.touched"
+                    class="text-red-600  text-base">Stats is required</span>
+                </div>
+                <div class="w-5/12">
+                    <p class="mb-2">Estimated End</p>
+                    <app-input-date class="w-full" #date [form]="estimatedEnd"></app-input-date>
+                </div>
+            </div>
+            
+        </div>
+        <div class="w-full mt-12">
+            <div class="w-9/12 green px-5 py-2 mx-auto rounded-xl" (click)="click()">
+                <p class="text-center text-white text-xl">Submit</p>
+            </div>
+        </div>
+        <div class="my-8 w-11/12 mx-auto flex gap-2 py-2 text-white rounded-lg" [ngClass]="color" *ngIf="isOpen">
+            <p class="mx-start mx-10">{{message}}</p>
+            <button class="ml-auto mx-10 bg-" (click)="redirect()">Voltar</button>
+        </div>
+    </div>
+</div>

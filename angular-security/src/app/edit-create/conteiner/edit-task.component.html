@@ -1,0 +1,5 @@
+<app-presenter (submitEvent)="click()" [formGroup]="formGroup" [title]="getControl('title')"
+[description]="getControl('description')" [estimatedEnd]="getControl('estimatedEnd')"
+[important]="getControl('important')" [urgent]="getControl('urgent')"
+[stats]="getControl('stats')" [options]="stats" [isOpen]="isOpen" 
+[color]="color" [message]="message" (redirectEvent)="goToHome()"></app-presenter>

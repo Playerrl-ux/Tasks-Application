@@ -1,0 +1,17 @@
+<div *ngIf="task" [ngClass]="color" class="h-full w-full rounded-xl">
+    <div class="flex flex-col text-white mx-8 text-xl h-full">
+        <div class="mb-4">
+            <h2 class="mt-6 mb-4">Title: {{ task.title }}</h2>
+            <p>End: {{ task.estimatedEnd | date}}</p>
+        </div>
+        <div>
+            <p>Description: {{ task.description }}</p>
+        </div>
+        <div class="flex flex-row gap-3 mt-auto text-lg self-center">
+            <p>{{ task.urgent ? 'Urgent Task' : 'Not Urgent' }}</p>
+            <p>{{ task.important ? 'Important Task' : 'Not Important' }}</p>
+            <p>{{task.stats}}</p>
+        </div>
+        
+    </div>    
+</div>

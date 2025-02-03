@@ -1,0 +1,20 @@
+<div class="flex items-center justify-center mx-auto w-full h-full">
+    <div class="bg-white flex flex-col justify-center items-center w-3/12 mx-auto rounded-xl">
+      <p class="mt-8 text-3xl">Welcome</p>
+      <form>
+        
+  
+        <app-input-text type="text" id="username" placeholder="Username" class="ms-5 mb-24 mt-16 w-4/5" #usernameInput></app-input-text>
+      
+        <app-input-text type="password" id="password" placeholder="Password" class="ms-5 mb-16 w-4/5" #passwordInput></app-input-text>
+  
+        </form>
+        <button (click)="click()"  
+        class="rounded-lg w-9/12 flex 
+        flex-row items-center 
+        justify-center green-bg
+        py-1.5 text-white mb-16"> 
+        Login 
+        </button>
+    </div>  
+  </div>

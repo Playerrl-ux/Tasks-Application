@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center w-full h-full bg-white rounded-xl">
+    <div class="bg-white flex flex-row w-full ">
+        <app-input-text type="text" id="title" 
+            placeholder="Task Title" 
+            class="mx-4 my-6 w-full" #title>
+        </app-input-text>
+
+        <img src="assets/magnifying-glass .png" alt="alternativo" class="mt-16 ms-10 me-8 w-6 h-6" (click)="emitSearchEvent()">
+        
+    </div>
+    <app-full-task [task]="task?.task" [color]="task?.color" class="w-4/5 h-4/6" (click)="emitClick()"></app-full-task>
+</div>    

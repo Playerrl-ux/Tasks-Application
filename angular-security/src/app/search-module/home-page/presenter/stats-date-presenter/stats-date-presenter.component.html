@@ -1,0 +1,21 @@
+<div class="flex flex-col h-full">
+    <div class="flex flex-col w-full h-93-100 rounded-xl bg-white">
+        <div class="flex flex-row my-12 ms-8 space-x-8 w-full">
+            <app-label class="w-4/12" [options]="stats" [form]="formStats" #label></app-label>
+            <app-input-date class="w-4/12" [form]="formDate" #date></app-input-date>
+            <img src="assets/magnifying-glass .png" alt="alternativo" (click)="search()" class="w-6 h-6 mt-2">
+        </div>
+        <div class="flex-grow mx-4">
+            <div *ngFor="let t of tasks" class="w-full mb-4">
+                <app-task-title [title]="t.task.title" [color]="t.color" (taskEvent)="taskTitleEmit($event)"></app-task-title>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-grow gap-5 justify-center mt-2">
+        <img src="assets/next.png" alt="prev" (click)="prevPag()" class="w-8 h-8 rotate-180">
+        <app-square *ngFor="let item of selectedItems; let i = index" 
+        [number]="i+1" [searchFunc]="exportSearch.bind(this)" [selected]="item"></app-square>
+        <img src="assets/next.png" alt="next" (click)="nextPag()" class="w-8 h-8">
+    </div>
+</div> 
+
