@@ -48,8 +48,9 @@ Before starting the Java API, open the `application.properties` file located in 
 # MongoDB connection URI (modify if your MongoDB instance is hosted elsewhere)
 spring.data.mongodb.uri=mongodb://localhost:27017/task-manager
 
-# (Optional) Specify the database name
-spring.data.mongodb.database=task-manager
+# (Optional) Specify the username and the password if necessary
+#spring.data.mongodb.username=seu_usuario
+#spring.data.mongodb.password=sua_senha
 ```
 
 #### Start the Back End
