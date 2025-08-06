@@ -5,19 +5,20 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.mine.project.model.User;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.Arrays;
-import java.util.Date;
 
 @Service
 public class TokenService {
 
-    private String secret = "shhhh é segredo";
+    //A melhor pratica seria guardar dentro de uma variavel de ambiente fora da aplicacao,
+    //mas para esse projeto, isto basta
+    @Value( "${jwt.secret}")
+    private String secret;
 
     public String generateToken(User user){
         try{
