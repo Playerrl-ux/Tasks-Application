@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-to-do
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data-2:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d:ro
+    restart: always
+
+volumes:
+  mongo-data-2:
